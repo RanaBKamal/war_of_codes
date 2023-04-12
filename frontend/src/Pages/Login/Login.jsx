@@ -5,8 +5,10 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./Login.css";
 import axios from "axios";
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
     const[user, setUser]= useState({
         username: '',
         password: ''
@@ -23,22 +25,24 @@ const Login = () => {
     //     return regex.test(username);
     //   }
 
-    const handleLogin=async(e)=>{
+    const handleLogin=(e)=>{
         e.preventDefault();
         // if (!validateUsername(user.username)) {
         //   setUsernameError("Please enter a valid username.");
         // } else {
         //   setUsernameError(null);
         // }
-        // axios.post(process.env.REACT_APP_BACKEND_URL+process.env.REACT_APP_SIGNIN_API, user)
-        // .then(function(response){
-        //     toast.success("Successfully loggedin");
-        //     localStorage.setItem("loggedin_user", JSON.stringify(response.data));
-        //     window.location.reload(false);
-        // })
-        // .catch(function(error){
-        //     toast.error("Failed to login");
-        // });
+        axios.post("http://localhost:8080/api/auth/signin", user)
+        .then(function(response){
+            console.log(response.data);
+            toast.success("Successfully loggedin");
+            localStorage.setItem("loggedin_user", JSON.stringify(response.data));
+            window.location.reload(false);
+        })
+        .catch(function(error){
+            console.log(error.message)
+            toast.error("Failed to login");
+        });
     }
 
     return (

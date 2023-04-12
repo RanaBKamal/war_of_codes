@@ -37,7 +37,7 @@ const Header = () => {
               {
                 Object.keys(loggedInUser).length === 0 &&
                 <div>
-                  <NavLink to="/login">Login</NavLink> &nbsp;|&nbsp;
+                  <NavLink to="/">Login</NavLink> &nbsp;|&nbsp;
                   <NavLink to="/signup">SignUp</NavLink>
                 </div>
               }
