@@ -105,7 +105,7 @@ const SingUp = () => {
               </Row>
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridPostalCode">
-                  <Form.Label>Postal Code</Form.Label>
+                  <Form.Label>Choice</Form.Label>
                   <Form.Select>
                     <option>Default Music</option>
                     <option>Sports</option>
