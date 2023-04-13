@@ -6,6 +6,8 @@ import SignUp from '../Pages/SignUp/SingUp';
 import Welcome from '../Pages/Welcome/Welcome';
 import Documentation from '../Pages/Documentation/Documentation';
 
+import Admin from '../Admin/Admin';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -17,6 +19,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/documentation" element={<Documentation />} />
+        <Route path="/admin" element={<Admin/>}/>
       </Routes>
     </Router>
   );
