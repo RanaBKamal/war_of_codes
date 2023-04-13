@@ -1,0 +1,65 @@
+.font-head{
+  font-family: 'Assistant', sans-serif;
+}
+
+.font-text{
+  font-family: 'Philosopher', sans-serif;
+}
+
+.hero-image{
+  position: relative;
+}
+
+.hero-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0;
+  border: none;
+  background-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
