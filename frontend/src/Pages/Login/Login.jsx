@@ -14,24 +14,24 @@ const Login = () => {
         password: ''
     });
 
-    // const [usernameError, setUsernameError]= useState(null);
+    const [usernameError, setUsernameError]= useState(null);
 
     const handleChange=(e)=>{
         setUser({...user, [e.target.name]:e.target.value});
     };
 
-    // const validateUsername = (username) => {
-    //     const regex = /^[a-zA-Z0-9_-]{3,16}$/;
-    //     return regex.test(username);
-    //   }
+    const validateUsername = (username) => {
+        const regex = /^[a-zA-Z0-9_-]{3,16}$/;
+        return regex.test(username);
+      }
 
     const handleLogin=(e)=>{
         e.preventDefault();
-        // if (!validateUsername(user.username)) {
-        //   setUsernameError("Please enter a valid username.");
-        // } else {
-        //   setUsernameError(null);
-        // }
+        if (!validateUsername(user.username)) {
+          setUsernameError("Username should be more than 3 characters.");
+        } else {
+          setUsernameError(null);
+        }
         axios.post("http://localhost:8080/api/auth/signin", user)
         .then(function(response){
             console.log(response.data);
@@ -71,7 +71,7 @@ const Login = () => {
                                     <Form.Control type="text" placeholder="Enter Username" 
                                     name="username" value={user.username} onChange={handleChange}
                                     />
-                                     {/* {usernameError && <p style={{fontStyle:"italic",color:"red"}}>{usernameError}</p>} */}
+                                     {usernameError && <p style={{fontStyle:"italic",color:"red"}}>{usernameError}</p>}
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
